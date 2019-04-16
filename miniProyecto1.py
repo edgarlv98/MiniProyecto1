@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 # Import the necessary package to process data in JSON format
+
+global contador
+contador=0
+
 try:
     import json
 except ImportError:
@@ -9,10 +13,10 @@ except ImportError:
 import tweepy
 
 # Variables that contains the user credentials to access Twitter API 
-ACCESS_TOKEN = '1027638254-xcjZ79DXjbigRk9jJQw32g8v1fdMF17mpP9LTaF'
-ACCESS_SECRET = 'CG4AfbyTy1YQmKiR6QyQUIW87o4u8XEDK5ctN7OBXWg9x'
-CONSUMER_KEY = '4hXRlwa3gda7xO2lASh7tpilk'
-CONSUMER_SECRET = 'SlWD9ArtYFi8HPzldyA8MpyCQRmXfeh7GhXW676QGHlEfgivcs'
+ACCESS_TOKEN = ''
+ACCESS_SECRET = ''
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
 
 # Setup tweepy to authenticate with Twitter credentials:
 
@@ -46,7 +50,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, 
 #stream.filter(track=["#NotreDame"],languages=["es"])
 
 
-for status in tweepy.Cursor(api.home_timeline).items(100):
+for status in tweepy.Cursor(api.home_timeline).items(1):
 	print(status._json)
 
 #---------------------------------------------------------------------------------------------------------------------
